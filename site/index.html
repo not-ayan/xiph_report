@@ -28,10 +28,14 @@
         <ol>
           <li><a href="#problem" data-spy>Problem</a></li>
           <li><a href="#pillars" data-spy>Six pillars</a></li>
-          <li><a href="#difference" data-spy>What makes it different</a></li>
+          <li><a href="#difference" data-spy>Rules vs LLMs</a></li>
           <li><a href="#architecture" data-spy>Architecture</a></li>
+          <li><a href="#channels" data-spy>Inclusive access</a></li>
+          <li><a href="#integrations" data-spy>Gov integrations</a></li>
           <li><a href="#evidence" data-spy>Trust &amp; evidence</a></li>
+          <li><a href="#impact" data-spy>Impact &amp; metrics</a></li>
           <li><a href="#roadmap" data-spy>Roadmap</a></li>
+          <li><a href="#faq" data-spy>Evaluator FAQ</a></li>
           <li><a href="#team" data-spy>Team Hexad Xiph</a></li>
         </ol>
         <p class="toc-h">Full specification</p>
@@ -151,11 +155,74 @@
         </figure>
         <div class="prose">
           <p>The web app, Android companion and administrative portals all consume the same API-first backend — no duplicated business logic. Suggested stack: FastAPI, PostgreSQL, Qdrant, Redis workers, Next.js on the web and Kotlin + Jetpack Compose on Android.</p>
-          <div class="callout callout--added">
-            <span class="tag">Inclusive access</span>
-            <p>Language, voice, WhatsApp/SMS, assisted CSC mode and an offline-first app mean the system works for a student on a basic phone on a weak network — not just in English on fast Wi-Fi.</p>
+        </div>
+      </section>
+
+      <!-- ==================== CHANNELS ==================== -->
+      <section id="channels" class="sec reveal">
+        <h2><span class="no">§</span>Inclusive access: reaching every student</h2>
+        <div class="prose">
+          <p>A scholarship system fails if it only works on high-speed 5G in English. Xiph provides five synchronized access channels designed for remote areas, tribal dialects, and low-end devices.</p>
+        </div>
+        <figure>
+          <div class="plate"><img src="assets/img/fig10_access_channels.png" alt="Diagram showing the five access channels: Android companion, web app, WhatsApp chatbot, voice IVR, and CSC assisted mode" width="2612" height="1526" loading="lazy"></div>
+          <figcaption><b>Fig 10</b> — Multi-channel inclusive access matrix connecting remote students to central intelligence.</figcaption>
+        </figure>
+        <div class="pillars">
+          <div class="pillar">
+            <h3>WhatsApp &amp; SMS Bot</h3>
+            <p class="purpose">Zero-install conversational interface.</p>
+            <ul>
+              <li>Deadlines &amp; status alerts</li>
+              <li>Basic eligibility checks via chat</li>
+              <li>Low-bandwidth document photo intake</li>
+            </ul>
+          </div>
+          <div class="pillar">
+            <h3>Voice / IVR Bot</h3>
+            <p class="purpose">Dial-in voice support in local dialects.</p>
+            <ul>
+              <li>Bodo, Santali, Assamese, Gondi, Hindi</li>
+              <li>Speech-to-text queries for parents &amp; elders</li>
+              <li>Interactive status checks without internet</li>
+            </ul>
+          </div>
+          <div class="pillar">
+            <h3>Offline Android App</h3>
+            <p class="purpose">Field-resilient mobile client.</p>
+            <ul>
+              <li>SQLite / Room encrypted offline cache</li>
+              <li>Background sync when connection restores</li>
+              <li>On-device camera OCR &amp; compression</li>
+            </ul>
+          </div>
+          <div class="pillar">
+            <h3>Assisted CSC Mode</h3>
+            <p class="purpose">Village-level operator facilitation.</p>
+            <ul>
+              <li>Gram Panchayat / CSC operator portal</li>
+              <li>Assisted student onboarding</li>
+              <li>Batch document verification &amp; tracking</li>
+            </ul>
           </div>
         </div>
+      </section>
+
+      <!-- ==================== INTEGRATIONS ==================== -->
+      <section id="integrations" class="sec reveal">
+        <h2><span class="no">§</span>Government ecosystem interoperability</h2>
+        <div class="prose">
+          <p>Xiph is built as a force-multiplier for existing government infrastructure, integrating cleanly with sovereign digital public goods rather than replacing them.</p>
+        </div>
+        <div class="table-wrap"><table>
+          <thead><tr><th scope="col">Ecosystem System</th><th scope="col">Integration Touchpoint</th><th scope="col">Value Added</th></tr></thead>
+          <tbody>
+            <tr><td><strong>DigiLocker</strong></td><td>OAuth document fetch &amp; issuer URI verification</td><td>Instant authentic caste, income, and marksheet verification</td></tr>
+            <tr><td><strong>National Scholarship Portal (NSP)</strong></td><td>14-digit OTR ID linking &amp; scheme schema sync</td><td>Unified application lifecycle without double data entry</td></tr>
+            <tr><td><strong>PFMS &amp; APB</strong></td><td>Direct Benefit Transfer disbursement status tracking</td><td>End-to-end payment visibility to bank credit</td></tr>
+            <tr><td><strong>APAAR / ABC</strong></td><td>Academic Bank of Credits verification</td><td>Tamper-proof academic performance &amp; enrolment records</td></tr>
+          </tbody>
+        </table></div>
       </section>
 
       <!-- ==================== EVIDENCE ==================== -->
@@ -168,6 +235,24 @@
           <div class="plate plate--medium"><img src="assets/img/fig09_trust_labels.png" alt="Decision flow showing how trust labels are assigned to community and third-party claims" width="1778" height="2632" loading="lazy"></div>
           <figcaption><b>Fig 9</b> — How trust labels are assigned to community and third-party claims.</figcaption>
         </figure>
+      </section>
+
+      <!-- ==================== IMPACT ==================== -->
+      <section id="impact" class="sec reveal">
+        <h2><span class="no">§</span>Measurable impact &amp; success criteria</h2>
+        <div class="prose">
+          <p>We measure success by tangible reduction in student friction, administrative backlogs, and missed scheme opportunities across tribal communities.</p>
+        </div>
+        <div class="table-wrap"><table>
+          <thead><tr><th scope="col">Key Metric</th><th scope="col">Traditional Process</th><th scope="col">With Xiph Ecosystem</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Discovery Time</strong></td><td>14–30 days scattered search</td><td>Instant profile-matched radar (< 5 seconds)</td></tr>
+            <tr><td><strong>Application Rejections</strong></td><td>High (missing docs, wrong format)</td><td>< 1% (pre-submission validator &amp; OCR checks)</td></tr>
+            <tr><td><strong>Lead Time Uncertainty</strong></td><td>Blind deadlines, rushed paperwork</td><td>Buffer-aware planner with days-to-acquire estimates</td></tr>
+            <tr><td><strong>Language Barrier</strong></td><td>Predominantly English PDFs</td><td>Voice, WhatsApp, &amp; multilingual regional assistance</td></tr>
+            <tr><td><strong>Eligibility Accuracy</strong></td><td>Prone to misunderstanding</td><td>Deterministic rule engine with 100% cited evidence</td></tr>
+          </tbody>
+        </table></div>
       </section>
 
       <!-- ==================== ROADMAP ==================== -->
@@ -188,6 +273,23 @@
             <li>Notifications and the Android view of the same data</li>
             <li>Ministry dashboard to close on system-level impact</li>
           </ol>
+        </div>
+      </section>
+
+      <!-- ==================== FAQ ==================== -->
+      <section id="faq" class="sec reveal">
+        <h2><span class="no">§</span>Frequently asked questions</h2>
+        <div class="prose">
+          <dl class="faq">
+            <dt>How does Xiph prevent AI hallucinations in scholarship rules?</dt>
+            <dd><p>Eligibility decisions are never computed by an LLM alone. Deterministic rules evaluate structured criteria, while RAG retrieves verbatim text from canonical government circulars with page numbers. LLMs are restricted to explanation and drafting.</p></dd>
+            <dt>What happens when a government portal layout changes?</dt>
+            <dd><p>The self-healing crawler detects extraction anomalies, falls back to semantic parsing and visual inspection, verifies extracted fields against historical ranges, and repairs its extraction strategy automatically (§4).</p></dd>
+            <dt>How is student privacy protected under India's DPDP Act?</dt>
+            <dd><p>Documents in the vault are encrypted at rest with AES-256 and transmitted over TLS 1.3. No raw Aadhaar numbers are stored; DigiLocker URI tokens are used instead. Student consent is explicit and revokable at any moment (§32).</p></dd>
+            <dt>Can students apply if they lack internet access at home?</dt>
+            <dd><p>Yes. The Android app operates fully offline with SQLite caching, and students can also interact via IVR toll-free voice calls, SMS, or through assisted mode at their nearest Common Service Centre (§27).</p></dd>
+          </dl>
         </div>
       </section>
 
@@ -215,7 +317,9 @@
         </div>
         <nav aria-label="Footer">
           <a href="report.html">Full report — 38 sections</a>
-          <a href="report.html#s24">Product positioning</a>
+          <a href="report.html#s27">Inclusive access &amp; channels</a>
+          <a href="report.html#s28">Government integrations</a>
+          <a href="report.html#s34">Impact &amp; evaluation</a>
           <a href="report.html#s35">Roadmap &amp; team roles</a>
           <a href="report.html#appendix-c">Revision notes</a>
         </nav>
