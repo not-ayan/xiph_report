@@ -42,8 +42,16 @@
     tocLinks.forEach(function (a) {
       var on = a.getAttribute("href") === "#" + id;
       a.classList.toggle("active", on);
-      if (on && a.scrollIntoView) {
-        a.scrollIntoView({ block: "nearest" });
+      if (on && sidebar) {
+        var aRect = a.getBoundingClientRect();
+        var sRect = sidebar.getBoundingClientRect();
+        if (aRect.top < sRect.top || aRect.bottom > sRect.bottom) {
+          try {
+            a.scrollIntoView({ block: "nearest", behavior: "smooth" });
+          } catch (e) {
+            a.scrollIntoView(false);
+          }
+        }
       }
     });
   }
@@ -81,6 +89,11 @@
     });
     sidebar.addEventListener("click", function (e) {
       if (e.target instanceof Element && e.target.closest("a")) closeDrawer();
+    });
+    window.addEventListener("resize", function () {
+      if (window.innerWidth >= 1024 && sidebar.classList.contains("open")) {
+        closeDrawer();
+      }
     });
   }
 
