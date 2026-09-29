@@ -1,0 +1,45 @@
+flowchart TB
+    subgraph SRC["Authorized public sources"]
+        G["Govt portals and ministries"]
+        UI["Universities and institutions"]
+        CM["Community discussions"]
+    end
+    subgraph ING["Ingestion layer"]
+        CR["Self-healing crawler"]
+        PR["OCR and PDF parser"]
+        ME["Metadata and change extraction"]
+    end
+    subgraph DATA["Data layer"]
+        PG[("PostgreSQL: structured records")]
+        VD[("Vector DB: embeddings")]
+        OS[("Object storage: documents")]
+    end
+    subgraph AI["Intelligence layer"]
+        HR["Hybrid retrieval and reranking"]
+        RE["Rule-based eligibility engine"]
+        LLM["LLM: explain, draft, validate"]
+    end
+    subgraph API["FastAPI backend, API-first"]
+        AP["REST API and auth"]
+        WK["Redis and background workers"]
+    end
+    subgraph CL["Clients"]
+        WEB["Web: Next.js"]
+        AND["Android: Kotlin + Compose"]
+        ADM["Institute and ministry portals"]
+    end
+    SRC --> CR --> PR --> ME
+    ME --> PG
+    ME --> VD
+    PR --> OS
+    PG --> RE
+    VD --> HR
+    HR --> LLM
+    RE --> LLM
+    PG --> AP
+    LLM --> AP
+    WK <--> AP
+    AP --> WEB
+    AP --> AND
+    AP --> ADM
+    WK -. "push via FCM" .-> AND

@@ -1,0 +1,30 @@
+flowchart LR
+    subgraph USERS["Who is reaching us"]
+        S1["Student on smartphone"]
+        S2["Student on basic phone"]
+        S3["Student in remote area"]
+        S4["Parent or guardian"]
+        S5["Teacher or Institute Nodal Officer"]
+    end
+    subgraph CH["Channels"]
+        APP["Android app: offline-first"]
+        WEB["Web app: lightweight, low bandwidth"]
+        WA["WhatsApp / SMS assistant"]
+        IVR["Voice / IVR assistant"]
+        CSC["Assisted mode at CSC or school kiosk"]
+    end
+    CORE["Same Xiph API: one brain, many doors"]
+    S1 --> APP
+    S1 --> WEB
+    S2 --> WA
+    S2 --> IVR
+    S3 --> CSC
+    S3 --> APP
+    S4 --> WA
+    S5 --> WEB
+    APP --> CORE
+    WEB --> CORE
+    WA --> CORE
+    IVR --> CORE
+    CSC --> CORE
+    CORE --> L["Language layer: English, Hindi, regional and tribal languages"]

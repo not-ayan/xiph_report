@@ -1,0 +1,86 @@
+erDiagram
+    SOURCE ||--o{ SCHOLARSHIP : publishes
+    SCHOLARSHIP ||--o{ SCHOLARSHIP_VERSION : "tracks history of"
+    SCHOLARSHIP_VERSION ||--o{ EVIDENCE : "is backed by"
+    SOURCE ||--o{ EVIDENCE : "is origin of"
+    SCHOLARSHIP ||--o{ COMMUNITY_INSIGHT : "discussed in"
+    STUDENT_PROFILE ||--o{ DOCUMENT : owns
+    STUDENT_PROFILE ||--o{ APPLICATION : submits
+    SCHOLARSHIP ||--o{ APPLICATION : receives
+    APPLICATION }o--o{ DOCUMENT : attaches
+    APPLICATION ||--o{ AWARD_RENEWAL : "may lead to"
+    STUDENT_PROFILE ||--o{ NOTIFICATION : receives
+    SCHOLARSHIP ||--o{ NOTIFICATION : triggers
+    SOURCE {
+        string domain PK
+        string type
+        float reliability
+        string crawl_policy
+        string health
+        string extraction_strategy
+    }
+    SCHOLARSHIP {
+        uuid id PK
+        string name
+        string provider
+        string type
+        string status
+        string canonical_source
+    }
+    SCHOLARSHIP_VERSION {
+        uuid id PK
+        string cycle
+        json extracted_fields
+        string source_document
+        json changes
+        datetime verified_at
+    }
+    EVIDENCE {
+        uuid id PK
+        string page_or_section
+        string claim
+        float extraction_confidence
+        string verification_status
+    }
+    COMMUNITY_INSIGHT {
+        uuid id PK
+        string claim
+        string source
+        date reported_on
+        int supporting_discussions
+        string corroboration_state
+    }
+    STUDENT_PROFILE {
+        uuid id PK
+        json academic_qualifications
+        json financial_data
+        json geographic_data
+        json preferences
+    }
+    DOCUMENT {
+        uuid id PK
+        string document_type
+        date expiry_date
+        string verification_state
+        string storage_ref
+    }
+    APPLICATION {
+        uuid id PK
+        string status
+        date submitted_date
+        date deadline
+        json verification_stages
+    }
+    AWARD_RENEWAL {
+        uuid id PK
+        string cycle
+        string disbursement_status
+        date renewal_window
+    }
+    NOTIFICATION {
+        uuid id PK
+        string trigger
+        string message
+        string priority
+        string delivery_state
+    }

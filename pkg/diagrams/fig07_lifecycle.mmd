@@ -1,0 +1,18 @@
+stateDiagram-v2
+    [*] --> Discovered
+    Discovered --> EligibilityChecked
+    EligibilityChecked --> NotEligible: hard rule fails
+    EligibilityChecked --> Preparing: eligible or potentially eligible
+    Preparing --> ReadyToSubmit: documents and materials validated
+    ReadyToSubmit --> Submitted
+    Submitted --> InstituteVerification
+    InstituteVerification --> Returned: correction requested
+    Returned --> Preparing
+    InstituteVerification --> HigherLevelVerification: INO approves
+    HigherLevelVerification --> Sanctioned: DNO / SNO / ministry approves
+    HigherLevelVerification --> Rejected
+    Sanctioned --> Disbursed: DBT credited
+    Disbursed --> RenewalDue
+    RenewalDue --> Preparing: renewal window opens
+    NotEligible --> [*]
+    Rejected --> [*]

@@ -1,0 +1,17 @@
+flowchart LR
+    S(["Start: run crawler"]) --> D{"Data extracted successfully?"}
+    D -- Yes --> U[("Update scholarship database")]
+    D -- "No / failure detected" --> A["Diagnose: did the HTML structure change?"]
+    A --> B["Fallback: semantic / LLM extraction"]
+    B --> C["Generate revised extraction strategy"]
+    C --> V["Validate fields against historical values"]
+    V --> Q{"Confidence check pass?"}
+    Q -- Yes --> P["Promote and store new strategy"]
+    P --> U
+    Q -- No --> H["Route to human review, mark as unverified"]
+    classDef ok fill:#d9f7d9,stroke:#2e7d32,color:#000
+    classDef bad fill:#fde0e0,stroke:#c62828,color:#000
+    classDef dec fill:#fff3d6,stroke:#ef6c00,color:#000
+    class P,U ok
+    class H bad
+    class D,Q dec

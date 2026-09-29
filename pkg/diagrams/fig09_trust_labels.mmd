@@ -1,0 +1,16 @@
+flowchart TB
+    CL["New claim: community post or third-party page"] --> X{"Matching official source found?"}
+    X -- No --> U["Label: UNVERIFIED or COMMUNITY OBSERVATION"]
+    X -- Yes --> Y{"Do they agree?"}
+    Y -- Yes --> V["Label: CROSS-VERIFIED"]
+    Y -- No --> K["Show CONFLICT panel: official text on one side, claim on the other"]
+    K --> O["Official source stays authoritative"]
+    N{"Independent supporting discussions"} --> M["Show count and time period, never population statistics"]
+    U --> N
+    V --> N
+    classDef g fill:#d9f7d9,stroke:#2e7d32,color:#000
+    classDef r fill:#fde0e0,stroke:#c62828,color:#000
+    classDef y fill:#fff3d6,stroke:#ef6c00,color:#000
+    class V,O g
+    class K r
+    class U y

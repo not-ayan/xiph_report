@@ -1,0 +1,7 @@
+flowchart TB
+    A(["Ministry initiates payment"]) --> B["Data sent to NPCI with student Aadhaar"]
+    B --> C["APB mapper checks Aadhaar-bank link"]
+    C --> D["Funds routed to specific bank account"]
+    D --> E(["Student receives SMS alert via mobile connectivity"])
+    style A fill:#e3f2fd,stroke:#1565c0
+    style E fill:#d9f7d9,stroke:#2e7d32

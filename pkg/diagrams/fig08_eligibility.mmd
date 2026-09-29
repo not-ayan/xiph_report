@@ -1,0 +1,20 @@
+flowchart TB
+    A["Structured scholarship requirements"] --> C
+    B["Verified student profile and documents"] --> C
+    C{"Hard rules: category, income, course, marks, region, age"}
+    C -- "All satisfied with verified evidence" --> E1["ELIGIBLE"]
+    C -- "A rule definitely fails" --> E2["NOT ELIGIBLE, with the failing rule and source page"]
+    C -- "Data missing or unverified" --> E3["POTENTIALLY ELIGIBLE"]
+    C -- "Rule text ambiguous" --> E4["UNKNOWN, route to human review"]
+    E3 --> F["Missing-document analysis and unlock score"]
+    E1 --> G["Historical profile fit, descriptive only"]
+    E1 --> H["Application readiness and deadline risk"]
+    F --> H
+    classDef g fill:#d9f7d9,stroke:#2e7d32,color:#000
+    classDef r fill:#fde0e0,stroke:#c62828,color:#000
+    classDef y fill:#fff3d6,stroke:#ef6c00,color:#000
+    classDef n fill:#eeeeee,stroke:#616161,color:#000
+    class E1 g
+    class E2 r
+    class E3 y
+    class E4 n

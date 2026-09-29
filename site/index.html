@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Xiph — AI-Powered Scholarship Intelligence &amp; Application Ecosystem</title>
+  <meta name="description" content="Team Hexad Xiph’s concept specification for an AI-powered scholarship and fellowship management system for Scheduled Tribe students. Smart India Hackathon 2026, problem statement SIH26239.">
+  <meta name="theme-color" content="#EFEAD8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#171C21" media="(prefers-color-scheme: dark)">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..600&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23232B33'/%3E%3Ctext x='16' y='22' font-family='Arial Black' font-size='15' font-weight='900' fill='%23EFEAD8' text-anchor='middle'%3EX%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <div class="layout">
+    <header class="sidebar" id="sidebar">
+      <a class="brand" href="index.html" aria-current="page" translate="no">
+        <span class="wordmark">Xip<em>h</em></span>
+        <span class="sub">Scholarship Intelligence Report</span>
+      </a>
+      <nav class="toc" aria-label="Site navigation">
+        <p class="toc-h">Overview</p>
+        <ol>
+          <li><a href="#problem" data-spy>Problem</a></li>
+          <li><a href="#pillars" data-spy>Six pillars</a></li>
+          <li><a href="#difference" data-spy>What makes it different</a></li>
+          <li><a href="#architecture" data-spy>Architecture</a></li>
+          <li><a href="#evidence" data-spy>Trust &amp; evidence</a></li>
+          <li><a href="#roadmap" data-spy>Roadmap</a></li>
+          <li><a href="#team" data-spy>Team Hexad Xiph</a></li>
+        </ol>
+        <p class="toc-h">Full specification</p>
+        <ol>
+          <li><a href="report.html">Read the report (38 sections)</a></li>
+        </ol>
+      </nav>
+      <p class="sidebar-foot">Smart India Hackathon 2026 · Problem statement SIH26239 · Ministry of Tribal Affairs · Smart Education</p>
+    </header>
+
+    <main id="main" class="content">
+      <!-- ==================== HERO ==================== -->
+      <section class="hero" aria-label="Introduction">
+        <span class="stamp" aria-hidden="true">SIH26239<small>Verified concept</small></span>
+        <div class="hero-topbar">
+          <p class="caption">Concept &amp; product specification</p>
+          <div class="hero-logos">
+            <img src="assets/logos/tezpur_university.jpg" alt="Tezpur University" width="187" height="187">
+            <img src="assets/logos/ministry_of_tribal_affairs.png" alt="Ministry of Tribal Affairs" width="727" height="275">
+            <img src="assets/logos/sih.png" alt="Smart India Hackathon" width="240" height="240">
+          </div>
+</div>
+        <h1>
+          <span class="thin">Team Hexad Xiph presents</span>
+          An intelligence layer for India’s scholarship system
+        </h1>
+        <p class="lede">Xiph is a continuously updated, evidence-aware ecosystem that discovers scholarship opportunities, verifies their requirements against official sources, and walks each student from <em>“what exists?”</em> to <em>“applied, tracked, renewed.”</em></p>
+
+        <dl class="hero-meta">
+          <div><dt>Problem</dt><dd>AI-Enabled Scholarship &amp; Fellowship Management for Scheduled Tribes</dd></div>
+          <div><dt>Ministry</dt><dd>Tribal Affairs</dd></div>
+          <div><dt>Theme</dt><dd>Smart Education</dd></div>
+          <div><dt>Category</dt><dd>Software</dd></div>
+        </dl>
+
+        <div class="hero-actions">
+          <a class="btn" href="report.html">Read the full report</a>
+          <a class="btn btn--ghost" href="#problem">Start with the problem</a>
+        </div>
+      </section>
+
+      <!-- ==================== PROBLEM ==================== -->
+      <section id="problem" class="sec reveal">
+        <h2><span class="no">§</span>The problem worth solving</h2>
+        <div class="prose">
+          <p>Scholarships for Scheduled Tribe students are a lifeline — and finding them is a maze. Opportunities are scattered across ministry portals, university notices and word of mouth; eligibility rules live inside PDFs; a changed deadline is discovered only when it is too late.</p>
+          <figure>
+            <div class="plate plate--wide"><img src="assets/img/figR1_st_education_comparison.png" alt="Bar chart comparing Scheduled Tribe education indicators against national benchmarks" width="2000" height="1120" loading="lazy"></div>
+            <figcaption><b>Fig R1</b> — Scheduled Tribe education indicators vs national benchmarks. ST students are 8.6% of India’s population but about 5.8% of higher-education enrolment; the GER gap remains substantial.</figcaption>
+          </figure>
+          <p>Meanwhile the machinery that delivers funds is under real strain. The Union Budget 2025-26 cut the National Fellowship for Scheduled Tribes allocation by 99.99% in a single year — from ₹240&nbsp;crore to ₹0.02&nbsp;crore — before a partial recovery in 2026-27.</p>
+          <figure>
+            <div class="plate plate--wide"><img src="assets/img/figR5_budget_cuts_and_recovery.png" alt="Charts showing reported 2025-26 budget reductions and the NFST allocation trajectory across three budgets" width="2200" height="1000" loading="lazy"></div>
+            <figcaption><b>Fig R5</b> — The reported 2025-26 reductions and the NFST allocation trajectory across three budgets (log scale).</figcaption>
+          </figure>
+        </div>
+
+        <div class="vs" aria-label="Typical portal versus proposed system">
+          <div class="them">
+            <h3>Typical scholarship portal</h3>
+            <p>Manually maintained listings</p>
+            <p>Static eligibility filters</p>
+            <p>Search by keywords</p>
+            <p>PDF storage</p>
+            <p>Generic chatbot</p>
+            <p>Deadline reminder</p>
+          </div>
+          <div class="us">
+            <h3>What Xiph proposes</h3>
+            <p>Continuously discovered, self-healing data acquisition</p>
+            <p>Rules + evidence-aware RAG + document-aware personalization</p>
+            <p>Profile + document + deadline + historical context matching</p>
+            <p>Document intelligence: OCR, validation, compression, reuse</p>
+            <p>Source-aware, temporal, contradiction-aware RAG</p>
+            <p>Preparation-time-aware application planner</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== PILLARS ==================== -->
+      <section id="pillars" class="sec reveal">
+        <h2><span class="no">§</span>Six pillars of the product</h2>
+        <div class="prose"><p>Every feature in the 38-section specification hangs off one of six capabilities.</p></div>
+        <div class="pillars">
+          <div class="pillar"><h3>Discovery</h3><p class="purpose">Continuously find opportunities and updates.</p><ul><li>Self-healing crawler</li><li>Source registry</li><li>Change detection &amp; deduplication</li></ul></div>
+          <div class="pillar"><h3>Intelligence</h3><p class="purpose">Understand and verify scholarship information.</p><ul><li>Evidence-aware RAG</li><li>Rules-based eligibility engine</li><li>Historical selection data</li></ul></div>
+          <div class="pillar"><h3>Documents</h3><p class="purpose">Turn collection into an intelligent workflow.</p><ul><li>Vault with OCR &amp; validation</li><li>Compression &amp; conversion</li><li>Expiry detection &amp; reuse</li></ul></div>
+          <div class="pillar"><h3>Personalization</h3><p class="purpose">Match opportunities to the student’s real profile.</p><ul><li>Scholarship Radar</li><li>Document unlock analysis</li><li>Readiness &amp; deadline risk</li></ul></div>
+          <div class="pillar"><h3>Application Copilot</h3><p class="purpose">Help students prepare high-quality applications.</p><ul><li>SOP &amp; proposal drafting</li><li>Requirement validation</li><li>Verified-profile guardrails</li></ul></div>
+          <div class="pillar"><h3>Management</h3><p class="purpose">Support the full lifecycle for every stakeholder.</p><ul><li>Verification workflow</li><li>Institution &amp; ministry dashboards</li><li>Alerts, disbursement &amp; renewal</li></ul></div>
+        </div>
+      </section>
+
+      <!-- ==================== DIFFERENCE ==================== -->
+      <section id="difference" class="sec reveal">
+        <h2><span class="no">§</span>Rules decide, LLMs explain</h2>
+        <div class="prose">
+          <p>The crawler collects evidence; structured rules handle deterministic eligibility; RAG retrieves the right evidence; AI explains and assists; the backend coordinates the lifecycle. An LLM may extract candidate rules, but a deterministic engine evaluates them — and missing data never upgrades into a “yes”.</p>
+        </div>
+        <figure>
+          <div class="plate"><img src="assets/img/fig08_eligibility.png" alt="Flowchart of the tri-state eligibility decision: eligible, not eligible, potentially eligible, or unknown" width="2216" height="1708" loading="lazy"></div>
+          <figcaption><b>Fig 8</b> — Tri-state eligibility decision flow. Every verdict carries its evidence; ambiguous cases go to human review, never to a guess.</figcaption>
+        </figure>
+        <div class="prose">
+          <p>Xiph never predicts selection. It reports three <em>descriptive</em> measures — eligibility confidence, historical profile fit, and application readiness — each traced to evidence.</p>
+        </div>
+      </section>
+
+      <!-- ==================== ARCHITECTURE ==================== -->
+      <section id="architecture" class="sec reveal">
+        <h2><span class="no">§</span>One pipeline, many doors</h2>
+        <figure>
+          <div class="plate plate--wide"><img src="assets/img/fig06_architecture.png" alt="Reference architecture diagram from public sources through ingestion, data, intelligence and API layers to web, Android and admin clients" width="2768" height="2978" loading="lazy"></div>
+          <figcaption><b>Fig 6</b> — Reference architecture. Authorized sources flow through a self-healing crawler into PostgreSQL and a vector database; a FastAPI backend serves web, Android and admin clients over one API.</figcaption>
+        </figure>
+        <div class="prose">
+          <p>The web app, Android companion and administrative portals all consume the same API-first backend — no duplicated business logic. Suggested stack: FastAPI, PostgreSQL, Qdrant, Redis workers, Next.js on the web and Kotlin + Jetpack Compose on Android.</p>
+          <div class="callout callout--added">
+            <span class="tag">Inclusive access</span>
+            <p>Language, voice, WhatsApp/SMS, assisted CSC mode and an offline-first app mean the system works for a student on a basic phone on a weak network — not just in English on fast Wi-Fi.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== EVIDENCE ==================== -->
+      <section id="evidence" class="sec reveal">
+        <h2><span class="no">§</span>Trust is the product</h2>
+        <div class="prose">
+          <p>Every fact in Xiph carries a label — <strong>Official</strong>, <strong>Cross-verified</strong>, <strong>Community observation</strong> or <strong>Unverified</strong> — with the number and period of supporting discussions, and a visible last-verified date. Community insight never silently overrides an official source; conflicts are displayed side by side.</p>
+        </div>
+        <figure>
+          <div class="plate plate--slim"><img src="assets/img/fig09_trust_labels.png" alt="Decision flow showing how trust labels are assigned to community and third-party claims" width="1778" height="2632" loading="lazy"></div>
+          <figcaption><b>Fig 9</b> — How trust labels are assigned to community and third-party claims.</figcaption>
+        </figure>
+      </section>
+
+      <!-- ==================== ROADMAP ==================== -->
+      <section id="roadmap" class="sec reveal">
+        <h2><span class="no">§</span>Built for a demo that convinces</h2>
+        <figure>
+          <div class="plate plate--wide"><img src="assets/img/fig11_roadmap.png" alt="Gantt-style delivery roadmap chart" width="2768" height="776" loading="lazy"></div>
+          <figcaption><b>Fig 11</b> — Proposed delivery roadmap (dates are placeholders, to be aligned with the actual SIH timeline).</figcaption>
+        </figure>
+        <div class="prose">
+          <ol class="plain">
+            <li>One official PDF ingested with page-level evidence</li>
+            <li>Eligibility engine with tri-state results</li>
+            <li>Self-healing demo on a deliberately broken mock page</li>
+            <li>Radar, document unlock and the application planner</li>
+            <li>Cited RAG answers with the contradiction view</li>
+            <li>Copilot with requirement validation</li>
+            <li>Notifications and the Android view of the same data</li>
+            <li>Ministry dashboard to close on system-level impact</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ==================== TEAM ==================== -->
+      <section id="team" class="sec reveal">
+        <h2><span class="no">§</span>Team Hexad Xiph</h2>
+        <div class="prose"><p>Six students of Tezpur University — computer science, mechanical engineering and design.</p></div>
+        <div class="team-grid">
+          <div class="member"><span class="role-no">Member 01 · Lead</span><h3>Sanjit Bhattacharjee</h3><p>Computer Science · CSB25078</p></div>
+          <div class="member"><span class="role-no">Member 02</span><h3>Prashant Sinha</h3><p>Mechanical · MEBM25001</p></div>
+          <div class="member"><span class="role-no">Member 03</span><h3>Dibyojyoti Baro</h3><p>Computer Science · CSBM25001</p></div>
+          <div class="member"><span class="role-no">Member 04</span><h3>Subhapriya Dey</h3><p>Mechanical · MEBM25003</p></div>
+          <div class="member"><span class="role-no">Member 05</span><h3>Ayan Biswas</h3><p>CSE · CSM25032</p></div>
+          <div class="member"><span class="role-no">Member 06</span><h3>Himashree Sarmah</h3><p>Design · DBD25025</p></div>
+        </div>
+        <figure>
+          <div class="plate plate--slim"><img src="assets/logos/hexad_xiph.jpg" alt="Hexad Xiph team logo" width="605" height="312" loading="lazy"></div>
+        </figure>
+      </section>
+
+      <footer class="footer">
+        <div>
+          <p class="foot-brand" translate="no">Xip<em>h</em></p>
+          <p>An AI-powered scholarship intelligence &amp; application ecosystem. Concept specification by Team Hexad Xiph, Tezpur University.</p>
+        </div>
+        <nav aria-label="Footer">
+          <a href="report.html">Full report — 38 sections</a>
+          <a href="report.html#s24">Product positioning</a>
+          <a href="report.html#s35">Roadmap &amp; team roles</a>
+          <a href="report.html#appendix-c">Revision notes</a>
+        </nav>
+      </footer>
+    </main>
+  </div>
+
+  <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="sidebar" hidden>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    Contents
+  </button>
+  <button class="backdrop" id="backdrop" tabindex="-1" aria-hidden="true"></button>
+
+  <script src="app.js"></script>
+</body>
+</html>
