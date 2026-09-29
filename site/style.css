@@ -404,15 +404,20 @@ a:hover {
 .hero-logos {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1.15rem;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 0.35rem 0.85rem;
+  border-radius: 8px;
+  border: 1px solid var(--rule);
 }
 
 .hero-logos img {
-  height: 32px;
+  height: 28px;
+  max-width: 110px;
   width: auto;
   object-fit: contain;
   filter: grayscale(1) contrast(0.95);
-  opacity: 0.8;
+  opacity: 0.85;
   transition: opacity 160ms var(--ease), filter 160ms var(--ease);
 }
 .hero-logos img:hover {
@@ -421,8 +426,12 @@ a:hover {
 }
 
 @media (prefers-color-scheme: dark) {
+  .hero-logos {
+    background: rgba(30, 36, 43, 0.85);
+    border-color: var(--rule-2);
+  }
   .hero-logos img {
-    filter: brightness(0.9) contrast(1.1) grayscale(0.85);
+    filter: brightness(0.95) contrast(1.05) grayscale(0.7);
   }
   .hero-logos img:hover {
     filter: brightness(1) grayscale(0);
@@ -795,40 +804,63 @@ td .pill {
 /* ---------- Figures & Plates ---------- */
 
 figure {
-  margin: 2rem 0;
+  margin: 2.25rem 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .plate {
   background: var(--plate-bg);
   border: 1px solid var(--rule);
-  padding: clamp(0.75rem, 1.8vw, 1.25rem);
+  padding: clamp(0.75rem, 1.8vw, 1.35rem);
   box-shadow: var(--shadow);
   border-radius: 6px;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .plate img {
   width: 100%;
+  max-width: 100%;
   height: auto;
+  display: block;
+  object-fit: contain;
   border-radius: 3px;
+  margin-inline: auto;
 }
 
 .plate--slim {
-  max-width: 360px;
+  max-width: 420px;
+  margin-inline: auto;
+}
+
+.plate--medium {
+  max-width: 620px;
   margin-inline: auto;
 }
 
 .plate--wide {
-  width: calc(100% + (var(--content-px) * 2));
-  margin-inline: calc(var(--content-px) * -1);
-  max-width: none;
+  width: 100%;
+  max-width: 100%;
 }
 
-@media (max-width: 768px) {
-  .plate--wide {
-    width: 100%;
-    margin-inline: 0;
-  }
+figure:has(.plate--slim),
+figure.figure--slim {
+  max-width: 440px;
+  margin-inline: auto;
+}
+figure:has(.plate--slim) figcaption,
+figure.figure--slim figcaption {
+  text-align: center;
+}
+
+figure:has(.plate--medium),
+figure.figure--medium {
+  max-width: 660px;
+  margin-inline: auto;
 }
 
 figcaption {
@@ -836,6 +868,7 @@ figcaption {
   font-size: 0.88rem;
   color: var(--ink-2);
   line-height: 1.6;
+  max-width: var(--measure);
 }
 
 figcaption b {
@@ -851,6 +884,19 @@ figcaption .fx {
 }
 figcaption .fx--new {
   color: var(--ball-deep);
+}
+
+.team-logo-wrap {
+  margin-top: 1.75rem;
+  display: flex;
+  justify-content: center;
+}
+.team-logo-wrap img {
+  max-width: 260px;
+  height: auto;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  box-shadow: var(--shadow-sm);
 }
 
 /* ---------- Code Snippets ---------- */
